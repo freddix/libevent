@@ -1,12 +1,13 @@
 Summary:	Event notification library
 Name:		libevent
-Version:	2.0.20
+Version:	2.0.21
 Release:	1
 License:	BSD
 Group:		Libraries
 Source0:	https://github.com/downloads/libevent/libevent/%{name}-%{version}-stable.tar.gz
-# Source0-md5:	94270cdee32c0cd0aa9f4ee6ede27e8e
+# Source0-md5:	b2405cc9ebf264aa47ff615d9de527a2
 Patch0:		%{name}-link.patch
+Patch1:		%{name}-am.patch
 URL:		http://www.monkey.org/~provos/libevent/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -30,6 +31,7 @@ Header files for libevent library.
 %prep
 %setup -qn %{name}-%{version}-stable
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__libtoolize}
